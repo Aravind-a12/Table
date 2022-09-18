@@ -15,8 +15,9 @@ const db = mysql.createConnection({
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
 
-app.get("/", (req,res)=>{
+app.get("/get", (req,res)=>{
 const id = req.params.id;
  db.query("SELECT * FROM my_name WHERE id = 1", id, 
  (err,result)=>{
@@ -26,6 +27,6 @@ const id = req.params.id;
     res.json(result)
     });   });
 
-app.listen(3001, () =>{
-    console.log("Server running in PORT 3001");
+app.listen(3002, () =>{
+    console.log("Server running in PORT 3002");
 })
