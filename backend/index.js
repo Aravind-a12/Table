@@ -24,7 +24,7 @@ const id = req.params.id;
     if(err) {
     console.log(err)
     } 
-    res.send(result)
+    res.json(result)
     });   });
 
 app.listen(3001, () =>{
