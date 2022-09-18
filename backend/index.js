@@ -17,16 +17,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
 
-app.post("/insert", (req,res) => {
-const firstname = req.body.firstname
-const secondname = req.body.secondname
-
-    const sqlInsert = "INSERT INTO my_name (firstname, secondname) VALUES (?,?)";
-    db.query(sqlInsert, [firstname, secondname], (err, result) => {
-        console.log(err);
-    });
-});
-
 app.get("/get", (req,res)=>{
 const id = req.params.id;
  db.query("SELECT * FROM my_name WHERE id = 1", id, 
