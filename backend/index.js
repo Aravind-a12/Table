@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
 
-app.get("/get", (req,res)=>{
+app.get("/", (req,res)=>{
 const id = req.params.id;
  db.query("SELECT * FROM my_name WHERE id = 1", id, 
  (err,result)=>{
