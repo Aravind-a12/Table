@@ -15,7 +15,6 @@ const db = mysql.createConnection({
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.json())
 
 app.get("/", (req,res)=>{
 const id = req.params.id;
